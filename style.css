@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    color: aliceblue;
+    overflow: hidden;
+}
+
+.container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    border-radius: 100px;
+}
+
+.sedan {
+    width: 300px;
+    height: 500px;
+    background-color: hsl(31, 77%, 52%);
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    border-radius: 20px 0 0 20px;
+}
+
+.suv {
+    width: 300px;
+    height: 500px;
+    background-color: hsl(184, 100%, 22%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding: 40px;
+    position: relative;
+}
+
+.luxury {
+    width: 300px;
+    height: 500px;
+    background-color: hsl(179, 100%, 13%);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding: 40px;
+    position: relative;
+    border-radius: 0 20px 20px 0;
+}
+.car-svg {
+    position: absolute;
+}
+
+.title {
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.paragraph {
+    margin-bottom: 50px;
+    height: 100px;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.learn-btn {
+    border-radius: 30px;
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    font-size: 17px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+}
+
+#sedan {
+    color: hsl(31, 77%, 52%);
+}
+
+#suv {
+    color: hsl(184, 100%, 22%);
+}
+
+#luxury {
+    color: hsl(179, 100%, 13%);
+}
+
+#sedan:hover {
+    color: aliceblue;
+    border: 4px solid white;
+    background-color: hsl(31, 77%, 52%);
+    cursor: pointer;
+}
+
+#suv:hover {
+    color: aliceblue;
+    border: 4px solid white;
+    background-color: hsl(184, 100%, 22%);
+    cursor: pointer;
+}
+
+#luxury:hover {
+    background-color: hsl(179, 100%, 13%);
+    cursor: pointer;
+    border: 4px solid white;
+    color: aliceblue;
+}
+
+.ocean {
+    height: 5%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+}
+
+.wave {
+    background: url(images/wave.svg);
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+        swell 7s ease -1.25s infinite;
+    opacity: 1;
+}
+
+@keyframes wave {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: -1600px;
+    }
+}
+
+@keyframes swell {
+    0%,
+    100% {
+        transform: translate3d(0, -25px, 0);
+    }
+    50% {
+        transform: translate3d(0, 5px, 0);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        margin-bottom: 300px;
+    }
+
+    .luxury {
+        margin-bottom: 50px;
+    }
+
+    .ocean {
+        display: none;
+    }
+    body {
+        overflow: auto;
+    }
+
+    .sedan {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .luxury {
+        border-radius: 0 0 20px 20px;
+    }
+}
